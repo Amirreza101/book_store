@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}تسویه حساب{% endblock %}
+{% block content %}
+<h4 class="mb-3">تسویه حساب</h4>
+<div class="row g-4">
+  <div class="col-lg-7">
+    <div class="card bg-dark border-secondary p-3">
+      <form method="post">{% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">آدرس گیرنده</label>
+          <input type="text" name="address" class="form-control form-control-dark" required>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">شهر</label>
+            <input type="text" name="city" class="form-control form-control-dark" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">کد پستی</label>
+            <input type="text" name="postal_code" class="form-control form-control-dark">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">روش پرداخت</label>
+          <select name="payment_method" class="form-select form-select-dark">
+            <option value="online">پرداخت آنلاین</option>
+            <option value="cod">پرداخت در محل</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">ثبت سفارش و پرداخت</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card bg-dark border-secondary p-3">
+      <h6>خلاصه سفارش</h6>
+      <ul class="list-unstyled small">
+        {% for item in cart.items.all %}
+          <li class="d-flex justify-content-between">
+            <div>{{ item.book.title }} × {{ item.quantity }}</div>
+            <div>{{ item.total_price }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+      <hr class="border-secondary">
+      <div class="d-flex justify-content-between"><div>جمع</div><div>{{ cart.total_price }}</div></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

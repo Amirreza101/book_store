@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}{{ books.title }} - جزئیات{% endblock %}
+{% block content %}
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card bg-dark border-secondary text-white p-2">
+                <img src="{{ books.image.url }}" class="img-fluid" alt="{{ books.title }}">
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h3 class="mb-1">{{ books.title }}</h3>
+            <p class="small text-secondary mb-2">نویسنده: {{ books.author }}</p>
+            <p class="small text-secondary mb-2">زبان: {{ books.language }}</p>
+            {% if books.publisher %}
+                <p class="small text-secondary mb-2">انتشارات: {{ books.publisher }}</p>
+            {% endif %}
+            {% if books.translator %}
+                <p class="small text-secondary mb-2">مترجم: {{ books.translator }}</p>
+            {% endif %}
+            <div class="mb-3">
+                <span class="h5 fw-bold">{{ books.price }} تومان</span>
+                {% if books.discount_price %}
+                    <span class="text-decoration-line-through small text-secondary ms-2">{{ books.price_after_discount }} تومان</span>
+                {% endif %}
+            </div>
+
+            <p class=" text-dark ">{{ books.short_description|linebreaksbr }}</p>
+
+            <form method="post" action="#"
+                  class="d-flex gap-2 align-items-center mt-3">{% csrf_token %}
+                <input type="number" name="quantity" value="1" min="1" max="{{ books.stock }}"
+                       class="form-control form-control-sm" style="width:90px;">
+                <button class="btn btn-primary">افزودن به سبد</button>
+                <a href="#" class="btn btn-outline-light ms-2">افزودن به لیست علاقه‌مندی</a>
+            </form>
+
+            <hr class="border-secondary my-4">
+            <h6>نقد و نظرات</h6>
+            <div class="list-group list-group-flush">
+                {% for review in books.reviews.all %}
+                    <div class="list-group-item bg-dark border-secondary text-white">
+                        <div class="d-flex justify-content-between">
+                            <div><strong>{{ review.user.get_full_name|default:review.user.username }}</strong> <small
+                                    class="text-secondary">— {{ review.created_at }}</small></div>
+                            <div class="small text-warning">{{ review.rating }} ★</div>
+                        </div>
+                        <p class="small mb-0 mt-2">{{ review.body }}</p>
+                    </div>
+                {% empty %}
+                    <div class="text-secondary small">هنوز نقدی ثبت نشده است.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

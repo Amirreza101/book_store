@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}پروفایل{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-dark border-secondary p-3 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-person-circle fs-1"></i>
+                </div>
+                <h6>{{ account. }}</h6>
+                <p class="small text-secondary">{{ user.email }}</p>
+                <a href="{% url 'accounts:edit_profile' %}" class="btn btn-outline-light btn-sm mt-2">ویرایش پروفایل</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h5>سفارش‌های اخیر</h5>
+            <div class="list-group bg-transparent">
+                {% for order in orders %}
+                    <a class="list-group-item list-group-item-action bg-dark border-secondary text-white d-flex justify-content-between"
+                       href="{% url 'orders:detail' order.id %}">
+                        <div>سفارش #{{ order.id }}</div>
+                        <div class="small text-secondary">{{ order.status }}</div>
+                    </a>
+                {% empty %}
+                    <div class="small text-secondary">سفارشی یافت نشد.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

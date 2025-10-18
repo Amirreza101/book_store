@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}سبد خرید{% endblock %}
+{% block content %}
+<h4 class="mb-3">سبد خرید</h4>
+{% if cart.items.count %}
+  <div class="table-responsive bg-dark rounded-3 p-3 border-secondary">
+    <table class="table table-borderless text-white mb-0">
+      <thead class="text-secondary small">
+        <tr>
+          <th>کتاب</th>
+          <th class="text-center">قیمت</th>
+          <th class="text-center">تعداد</th>
+          <th class="text-end">جمع</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items.all %}
+        <tr>
+          <td class="align-middle">
+            <div class="d-flex align-items-center gap-3">
+              <img src="{{ item.book.cover.url }}" alt="" style="height:60px;">
+              <div>
+                <div>{{ item.book.title }}</div>
+                <div class="small text-secondary">{{ item.book.authors.all|join:', ' }}</div>
+              </div>
+            </div>
+          </td>
+          <td class="text-center align-middle">{{ item.book.price }}</td>
+          <td class="text-center align-middle">
+            <form method="post" action="{% url 'cart:update' item.id %}">{% csrf_token %}
+              <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.book.stock }}" class="form-control form-control-sm" style="width:80px; margin:0 auto;">
+            </form>
+          </td>
+          <td class="text-end align-middle">{{ item.total_price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <div>
+        <a href="{% url 'books:list' %}" class="btn btn-outline-light">ادامه خرید</a>
+      </div>
+      <div>
+        <div class="small text-secondary mb-1">جمع سبد</div>
+        <div class="h5">{{ cart.total_price }} تومان</div>
+        <a href="{% url 'cart:checkout' %}" class="btn btn-primary mt-2">پرداخت نهایی</a>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="alert alert-secondary">سبد خرید شما خالی است.</div>
+{% endif %}
+{% endblock %}

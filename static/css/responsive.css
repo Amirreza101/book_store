@@ -1,0 +1,30 @@
+/* responsive.css – واکنش‌گرایی صفحات فروشگاه کتاب */
+
+/* موبایل */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* تبلت */
+@media (min-width: 577px) and (max-width: 992px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* دسکتاپ */
+@media (min-width: 993px) {
+    .container {
+        max-width: 1140px;
+    }
+}

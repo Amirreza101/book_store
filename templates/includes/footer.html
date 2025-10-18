@@ -1,0 +1,41 @@
+<footer class="bg-black text-secondary mt-5 pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 text-end">
+        <h5 class="text-white">فروشگاه کتاب</h5>
+        <p class="small">مجموعه‌ای از بهترین کتاب‌ها در دسته‌های گوناگون. ارسال به سراسر کشور.</p>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="text-white">لینک‌ها</h6>
+        <ul class="list-unstyled small">
+          <li><a class="link-secondary" href="{% url 'book-list' %}">فهرست کتاب‌ها</a></li>
+          <li><a class="link-secondary" href="{% url 'about-us' %}">درباره ما</a></li>
+          <li><a class="link-secondary" href="{% url 'contact' %}">تماس</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h6 class="text-white">عضویت در خبرنامه</h6>
+        <form method="post" action="#">
+          <div class="input-group">
+            <input type="email" class="form-control form-control-dark" placeholder="ایمیل خود را وارد کنید">
+            <button class="btn btn-primary" type="submit">عضویت</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 text-end">
+        <h6 class="text-white">دنبال کنید</h6>
+        <div class="d-flex gap-2 justify-content-end">
+          <a class="btn btn-outline-secondary btn-sm rounded-circle" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="btn btn-outline-secondary btn-sm rounded-circle" href="#"><i class="bi bi-instagram"></i></a>
+          <a class="btn btn-outline-secondary btn-sm rounded-circle" href="#"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-secondary">
+    <div class="d-flex justify-content-between small">
+      <div>© {{ now.year }} فروشگاه کتاب</div>
+      <div>طراحی شده با  <i class="bi bi-heart-fill text-danger"></i></div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,70 @@
+/* فونت و پایه */
+body {
+  font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
+  line-height: 1.8;
+}
+
+a, a:hover {
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* نوار ناوبری */
+.navbar-brand img { filter: brightness(0) invert(1); }
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* کارت کتاب */
+.card {
+  border-radius: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.card img {
+  object-fit: cover;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+/* دکمه‌ها */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-outline-light {
+  border-color: #ccc;
+  color: #f9f9f9;
+}
+.btn-outline-light:hover {
+  background-color: var(--accent);
+  color: #000;
+}
+
+/* فرم‌ها */
+.form-control-dark {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.form-control-dark:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+/* فوتر */
+footer {
+  border-top: 1px solid var(--border);
+}
+footer .btn-outline-secondary:hover {
+  background-color: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
