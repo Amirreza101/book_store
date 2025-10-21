@@ -7,16 +7,18 @@ from products.models import Books, Category
 
 # Create your views here.
 
-def home(request):
-    books = Books.objects.filter(is_active=True)
-    category = Category.objects.all()
-    return render(request, 'home.html', {'books': books, 'category': category})
+def navbar_partial(request):
+    return render(request,'includes/navbar.html')
 
+def footer_partial(request):
+    return render(request,'includes/footer.html')
 class HomeView(TemplateView):
     template_name = 'home.html'
-    def get_context_data(self, **kwargs):
-        super().get_context_data()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['books'] = Books.objects.filter(is_active=True)
+        return context
 
 
 def contact(request):
@@ -25,3 +27,4 @@ def contact(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+

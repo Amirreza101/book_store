@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView
 
 from products.models import Books, Category
 
@@ -15,5 +15,4 @@ class BooksList(ListView):
     model = Books
     context_object_name = 'books'
     paginate_by = 6
-
 
