@@ -3,13 +3,14 @@
 {% block content %}
     <div class="row">
         <div class="col-md-4">
-            <div class="card bg-dark border-secondary p-3 text-center">
+            <div class="card bg-light border-secondary p-3 text-center">
                 <div class="mb-3">
                     <i class="bi bi-person-circle fs-1"></i>
                 </div>
-                <h6>{{ account. }}</h6>
-                <p class="small text-secondary">{{ user.email }}</p>
-                <a href="{% url 'accounts:edit_profile' %}" class="btn btn-outline-light btn-sm mt-2">ویرایش پروفایل</a>
+                <h6>{{ account.username }}</h6>
+                <h6>{{ account.email }}</h6>
+                <p class="small text-secondary">{{ user }}</p>
+                <a href="#" class="btn btn-outline-dark btn-sm mt-2">ویرایش پروفایل</a>
             </div>
         </div>
         <div class="col-md-8">

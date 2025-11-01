@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39a70a75-2df8-4461-acfd-baf9dba7fb06" name="Changes" comment="book_store">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d12018cd-2f16-424e-be5d-80088508884b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d12018cd-2f16-424e-be5d-80088508884b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_setting/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d12018cd-2f16-424e-be5d-80088508884b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d12018cd-2f16-424e-be5d-80088508884b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book_store/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_setting/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_setting/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_setting/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_setting/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_setting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_setting/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_setting/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_setting/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_setting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_setting/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/book_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pagination.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,6 +65,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/products/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/site_setting/views.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -83,7 +97,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.python.django.customization.DjangoModulesConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -144,7 +158,16 @@
       <workItem from="1760513065034" duration="4795000" />
       <workItem from="1760715284952" duration="3065000" />
       <workItem from="1760772940177" duration="4909000" />
-      <workItem from="1761060491868" duration="2236000" />
+      <workItem from="1761060491868" duration="3464000" />
+      <workItem from="1761324722354" duration="1760000" />
+      <workItem from="1761381760805" duration="1658000" />
+      <workItem from="1761468235995" duration="3438000" />
+      <workItem from="1761556482150" duration="3334000" />
+      <workItem from="1761725223239" duration="3702000" />
+      <workItem from="1761753259482" duration="3926000" />
+      <workItem from="1761904425386" duration="1204000" />
+      <workItem from="1761918445036" duration="2345000" />
+      <workItem from="1761980242329" duration="2031000" />
     </task>
     <task id="LOCAL-00001" summary="book_store">
       <option name="closed" value="true" />
@@ -162,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760773392903</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="book_store">
+      <option name="closed" value="true" />
+      <created>1761062849659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761062849659</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

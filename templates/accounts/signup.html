@@ -7,9 +7,13 @@
                 <h5 class="mb-3">ثبت‌نام</h5>
                 <form method="post">{% csrf_token %}
 
-                    <div class="mb-2">
+                    <div class="mb-2 ">
                         <label class="form-label">ایمیل</label>
                         {{ register_form.email }}
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">نام و نام خانوادگی</label>
+                        {{ register_form.username }}
                     </div>
                     <div class="mb-2">
                         <label class="form-label">رمز عبور</label>

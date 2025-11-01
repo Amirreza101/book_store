@@ -14,5 +14,6 @@ class BooksList(ListView):
     template_name = 'books/book_list.html'
     model = Books
     context_object_name = 'books'
+    ordering = '-created'
     paginate_by = 6
 

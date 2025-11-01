@@ -1,10 +1,9 @@
-templates/pages/404.html
 {% extends 'base.html' %}
 {% block title %}صفحه پیدا نشد{% endblock %}
 {% block content %}
 <div class="text-center py-5">
-  <h1 class="display-4">404</h1>
-  <p class="lead text-secondary">صفحه‌ای که دنبال آن بودید یافت نشد.</p>
+  <h1 class="display-4 text-danger">404</h1>
+  <p class="lead text-secondary py-5">صفحه‌ای که دنبال آن بودید یافت نشد.</p>
   <a class="btn btn-primary" href="{% url 'home' %}">بازگشت به صفحه اصلی</a>
 </div>
 {% endblock %}

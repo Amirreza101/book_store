@@ -1,17 +1,34 @@
 {% extends 'base.html' %}
 {% block title %}تماس با ما{% endblock %}
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-8">
-    <div class="card bg-light border-secondary p-4">
-      <h5>تماس با ما</h5>
-      <form method="post">{% csrf_token %}
-        <div class="mb-3"><label class="form-label">نام</label><input class="form-control form-control-light" name="name" required></div>
-        <div class="mb-3"><label class="form-label">ایمیل</label><input class="form-control form-control-light" name="email" type="email" required></div>
-        <div class="mb-3"><label class="form-label">پیام</label><textarea class="form-control form-control-light" name="message" rows="5"></textarea></div>
-        <button class="btn btn-primary">ارسال</button>
-      </form>
-    </div>
-  </div>
-</div>
+    {% if user.is_authenticated %}
+        {% comment %} <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-light border-secondary p-4">
+                    <h5>تماس با ما</h5>
+                    <h6>منتظر انقادات و پیشنهادات شما هستیم</h6>
+                    <form method="post">{% csrf_token %}
+                        <div class="mb-3"><label class="form-label">پیام</label><textarea
+                                class="form-control form-control-light" name="message" rows="5"></textarea></div>
+                        <button class="btn btn-primary">ارسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>{% endcomment %}
+        <div class="col-md-8 container">
+            <form method="post">{% csrf_token %}
+                {% for field in form %}
+                    {{ field.label }}
+                    {{ field }}
+                    {{ field.errors }}
+                    <br>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary pull-right">ارسال</button>
+            </form>
+
+        </div>
+    {% else %}
+        <p>Login</p>
+    {% endif %}
+
 {% endblock %}

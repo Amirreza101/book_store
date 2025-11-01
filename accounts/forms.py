@@ -1,6 +1,7 @@
 from django import forms
 from django.core import validators
 from django.core.exceptions import ValidationError
+from django.forms.widgets import Textarea
 
 
 class RegisterForm(forms.Form):
@@ -14,6 +15,17 @@ class RegisterForm(forms.Form):
         validators=[
             validators.MaxLengthValidator(100),
             validators.EmailValidator,
+        ]
+    )
+    username = forms.CharField(
+        label='نام و نام خانوادگی',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control form-control-light',
+            'placeholder': 'نام و نام خانوادگی',
+            'required': 'required',
+        }),
+        validators=[
+            validators.MaxLengthValidator(100),
         ]
     )
     password = forms.CharField(
@@ -47,7 +59,6 @@ class RegisterForm(forms.Form):
             return confirm_password
 
         raise ValidationError('رمز عبور و تکرار رمز عبور مغایرت دارند')
-
 
 
 class LoginForm(forms.Form):
