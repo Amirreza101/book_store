@@ -78,3 +78,44 @@ class LoginForm(forms.Form):
             'required': 'required',
         })
     )
+
+
+class ForgotPasswordForm(forms.Form):
+    email = forms.EmailField(
+        label='ایمیل',
+        widget=forms.EmailInput(attrs={
+                'class': 'form-control form-control-light',
+                'placeholder': 'ایمیل',
+                'required': 'required',
+            }),
+        validators=[
+            validators.MaxLengthValidator(100),
+            validators.EmailValidator
+        ]
+    )
+
+
+class ResetPasswordForm(forms.Form):
+    password = forms.CharField(
+        label='کلمه عبور',
+        widget=forms.PasswordInput(attrs={
+                'class': 'form-control form-control-light',
+                'placeholder': 'کلمه عبور',
+                'required': 'required',
+            }),
+        validators=[
+            validators.MaxLengthValidator(100),
+        ]
+    )
+
+    confirm_password = forms.CharField(
+        label='تکرار کلمه عبور',
+        widget=forms.PasswordInput(attrs={
+                'class': 'form-control form-control-light',
+                'placeholder': 'تکرار کلمه عبور',
+                'required': 'required',
+            }),
+        validators=[
+            validators.MaxLengthValidator(100),
+        ]
+    )
